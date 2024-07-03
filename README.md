@@ -8,6 +8,8 @@ Theta Playground is an interactive web-based environment for experimenting with 
 ## IMPORTANT
 Theta implements some experimental WebAssembly features. In order for the browser to support all of Theta's language features, make sure "Experimental WebAssembly" is enabled in `chrome://flags/`:
 
+![Screen Shot 2024-07-03 at 5 12 47 PM](https://github.com/alexdovzhanyn/theta-browser-playground/assets/9296866/346aa179-51b0-4a5a-b767-e26dedf057d7)
+
 
 ## Key Features
 
