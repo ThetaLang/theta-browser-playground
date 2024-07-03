@@ -20,7 +20,7 @@ To set up the Theta Playground, follow these steps:
 
 1. **Clone the Repository**:
     ```sh
-    git clone https://github.com/yourusername/theta-playground.git
+    git clone https://github.com/alexdovzhanyn/theta-browser-playground.git
     cd theta-playground
     ```
 
