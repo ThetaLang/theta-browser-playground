@@ -45,5 +45,5 @@ To set up the Theta Playground, follow these steps:
 4. **Run the Script**:
     The `watch_source.sh` script will start a local server using `browser-sync` and open your default browser to `localhost:3000`.
     ```sh
-    ./watch_source.sh
+    ./watch_source.sh path/to/theta/source/file.th
     ```
