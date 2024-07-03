@@ -22,11 +22,14 @@ then
 fi
 
 FILE_TO_WATCH=$1
+WASM_FILE="${FILE_TO_WATCH%.*}.wasm"
+WASM_SOURCE_JSON="wasmSource.json"
 
 # Function to run when file changes
 run_command() {
     echo "File changed: $FILE_TO_WATCH"
     theta $FILE_TO_WATCH
+    echo "{ \"wasm\": \"$WASM_FILE\" }" > $WASM_SOURCE_JSON
 }
 
 # Function to kill both processes
@@ -39,11 +42,12 @@ cleanup() {
 # Trap SIGINT and call cleanup
 trap cleanup SIGINT
 
-# Start browser-sync
-browser-sync start --server --files test.wasm index.html &
+# Start browser-sync to watch the corresponding .wasm file
+run_command
+browser-sync start --server --files "$WASM_FILE" index.html &
 BROWSER_SYNC_PID=$!
 
-# Watch the file for changes
+# Watch the original file for changes
 fswatch -o $FILE_TO_WATCH | while read -r
 do
     run_command

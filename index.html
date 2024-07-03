@@ -113,7 +113,12 @@
                     };
                 })();
 
-                fetch("test.wasm")
+                fetch("wasmSource.json")
+                    .then((response) => response.json())
+                    .then((json) => {
+                        const wasmFile = json.wasm;
+                        return fetch(wasmFile);
+                    })
                     .then((response) => response.arrayBuffer())
                     .then((buffer) => {
                         // Display hexdump
