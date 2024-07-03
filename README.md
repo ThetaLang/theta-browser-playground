@@ -2,6 +2,10 @@
 
 Theta Playground is an interactive web-based environment for experimenting with WebAssembly (WASM) modules generated from the Theta programming language. It provides a simple and intuitive interface to load, display, and execute WebAssembly code directly in the browser.
 
+
+![Screen Shot 2024-07-03 at 1 58 30 AM](https://github.com/alexdovzhanyn/theta-browser-playground/assets/9296866/16357e85-5f9b-40e1-9ce1-44bff4f9ae49)
+
+
 ## Key Features
 
 - **Dynamic WebAssembly Loading**: The playground dynamically fetches and loads WebAssembly modules specified in a configuration file (`wasmSource.json`), allowing for easy updates and modifications without changing the HTML structure.
