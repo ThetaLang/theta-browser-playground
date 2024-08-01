@@ -77,6 +77,29 @@
                 font-size: 1rem;
                 color: var(--foreground);
             }
+            #hexdump {
+                max-height: 300px;
+                overflow: auto;
+            }
+            #console::-webkit-scrollbar,
+            #hexdump::-webkit-scrollbar {
+                width: 8px; 
+                height: 8px;
+            }
+            #console::-webkit-scrollbar-track,
+            #hexdump::-webkit-scrollbar-track {
+                background: #282a36; 
+            }
+            #console::-webkit-scrollbar-thumb,
+            #hexdump::-webkit-scrollbar-thumb {
+                background-color: #6272a4; 
+                border-radius: 10px; 
+                border: 2px solid #282a36; 
+            }
+            #console::-webkit-scrollbar-thumb:hover,
+            #hexdump::-webkit-scrollbar-thumb:hover {
+                background: #ff79c6; 
+            }
             #console {
                 border: 1px solid var(--selection);
                 background-color: var(--background);
@@ -143,8 +166,9 @@
                         return WebAssembly.instantiate(buffer, {});
                     })
                     .then((obj) => {
+                        console.log("Exported functions in module:", Object.keys(obj.instance.exports))
                         try {
-                            const result = obj.instance.exports.main();
+                            const result = obj.instance.exports['main0']();
                             outputElement.textContent =
                                 "Your code returned: " + result;
                         } catch (e) {
